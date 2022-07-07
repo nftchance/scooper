@@ -72,7 +72,7 @@ const FAQ = () => {
             answer: <Typography>Custom-built solutions for single-use cases are available at the cost of a flat-rate 10 ETH owed upon successful recovery of assets. With this, you will not receive the code nor a project to run yourself. Reach out by utilizing the <Link to="/contact">Contact</Link> page and a Scooper team member will be in touch.</Typography>
         }, {
             question: "Can I run Scooper on my local computer so that I know everything is safe?",
-            answer: <Typography>Yes! Scooper is open-source. You can find all the <a href="https://github.com/nftchance/scooper" target="_blank">code on GitHub</a>.</Typography>
+            answer: <Typography>Yes! Scooper is open-source. You can find all the <a href="https://github.com/nftchance/scooper" target="_blank" rel="nonreferrer">code on GitHub</a>.</Typography>
         }, {
             question: "How does Scooper work?",
             answer: <>
