@@ -1,0 +1,14 @@
+.error-container {
+    min-height: 750px;
+    display: grid; 
+    align-content: center;
+}
+
+.error-container h1 {
+    margin-bottom: 0px;
+}
+
+.error-container p {
+    margin-top: 0px;
+    margin-bottom: 40px;
+}

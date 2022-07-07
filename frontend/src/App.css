@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* { 
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, strong {
+  color: #707070;
+  text-transform: uppercase;
+}
+
+h3, h4, h5, p, a, span, ul, ol, li {
+  color: rgba(112, 112, 112, .85);
+}
+
+p, a, span { 
+  font-weight: 400;
+}
+
+a {
+  transition: .15s all ease-in-out;
+}
+
+a:hover,
+a:focus,
+a:active,
+a:hover *,
+a:focus *,
+a:active * {
+  color: #000 !important;
+}
+
+strong {
+  font-weight: bold;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.button {
+  border: 1px solid #707070 !important;
+  background: #ffffff;
+  border-radius: 0px !important;
+  color: #707070 !important;
+  padding: 5px 15px;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: .15s all ease-in-out;
+  font-weight: bold !important;
+}
+
+.button.secondary {
+  background: #707070 !important;
+  color: #fff !important;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  background: #000 !important;
+  color: #fff !important;
+  cursor: pointer;
+}
+
+input, 
+textarea,
+.MuiOutlinedInput-root {
+  border-radius: 0px !important;
+}
+
+.Mui-expanded {
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+
+blockquote {
+  background: #f7f7f7;
+}
+
+.container {
+  margin-inline: 30px;
+}
+
+.card { 
+  background: #fff;
+  border: 1px solid #707070;
+  font-size: .85em;
+  width: 200px;
+  position: absolute;
+  transition: .15s all ease-in-out;
+}
+
+.card .status { 
+  background: #fff;
+  border: 1px solid #707070;
+  padding: 5px 15px;
+  position: absolute;
+  top: -30px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.MuiPaper-root {
+  border: 1px solid #707070;
+}
+
+.header { 
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin-bottom: 0px;
+}
+
+.header p {
+  margin-top: 0px;
+  max-width: 650px;
+}
+
+@media only screen and (min-width: 1920px) {
+  .container {
+    margin: auto;
+    max-width: 65%;
+  }
+}

@@ -1,0 +1,37 @@
+.footer {
+    display: grid;
+    grid-template-columns: 150px auto auto 4fr;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.footer .brand {
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+.footer .brand img {
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    padding-top: 5px;
+}
+
+.footer a {
+    margin-right: 15px;
+}
+
+.footer a:last-of-type {
+    text-align: right;
+    margin-right: 15px;
+}
+
+@media only screen and (max-width: 992px) {
+    .footer {
+        grid-template-columns: 100%;
+    }
+
+    .footer a:last-of-type {
+        text-align: left;
+    }
+}

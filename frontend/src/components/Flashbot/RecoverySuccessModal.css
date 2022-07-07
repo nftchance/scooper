@@ -1,0 +1,12 @@
+.transaction {
+    display: grid;
+    grid-template-columns: 50px 8fr 6fr;
+    column-gap: 16px;
+}
+
+.buttons { 
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    column-gap: 16px;
+    margin-top: 20px;
+}

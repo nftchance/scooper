@@ -1,0 +1,224 @@
+.hero {
+    min-height: 600px;
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+}
+
+.hero .content { 
+    margin: auto;
+    margin-left: 0px;
+    max-width: 500px;
+}
+
+.hero .content p {
+    margin-bottom: 40px;
+}
+
+.hero .hero-header h1 {
+    margin-bottom: 0px;
+}
+
+.hero .hero-header p {
+    margin-top: 0px;
+}
+
+.hero .images { 
+    position: relative;
+}
+
+.hero .card {
+    opacity: 0;
+    padding: 5px;
+    animation: hero-card-animation .3s forwards;
+    transition: .3s all ease-in-out;
+}
+
+@keyframes hero-card-animation {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }   
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hero .card:nth-child(1) {
+    left: 35%;
+    top: 25%;
+    transform: rotate(6deg);
+    z-index: 6;
+    animation-delay: 1.2s;
+}
+
+.hero .card:nth-child(2) {
+    transform: scale(0.65) rotate(3deg);
+    left: 35%;
+    top: 0%;
+    animation-delay: 0.9s;
+}
+
+.hero .card:nth-child(3) {
+    transform: scale(0.7) rotate(-19deg);
+    left: 7%;
+    top: 30%;
+    animation-delay: 0.6s;
+}
+
+.hero .card:nth-child(4) {
+    transform: scale(0.85) rotate(-13deg);
+    left: 12%;
+    top: 8%;
+    animation-delay: 0.3s;
+}
+
+.hero .card:nth-child(5) {
+    transform: scale(0.65) rotate(30deg);
+    left: 60%;
+    top: 30%;
+    z-index: 2;
+}
+
+.hero .card:nth-child(6) {
+    transform: scale(0.85) rotate(21deg);
+    left: 55%;
+    top: 14%;
+    z-index: 1;
+    animation-delay: .15s;
+}
+
+.hero .card:hover {
+    transform: scale(1.2);
+    z-index: 10;
+}
+
+.hero .card img {
+    margin-top: 26px;
+    margin-bottom: 10px;
+}
+
+.hero .card .line {
+    border-bottom: 1px solid #707070;
+}
+
+.hero .card p {
+    color: #707070;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero .card p span { 
+    float: right;
+}
+
+.step-container .step-header p {
+    max-width: 800px;
+}
+
+.step-container .steps {
+    column-gap: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 40px;
+}
+
+.step-container .steps .card {
+    position: relative;
+    width: 100%;
+}
+
+.step-container .steps .card .card-body {
+    padding: 15px;
+}
+
+.step-container .steps .card .card-body p {
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 992px) {
+    .hero { 
+        grid-template-columns: 100%;    
+        grid-template-rows: auto 300px;
+        margin-top: 40px;
+    }
+
+    .hero .content {
+        margin-left: auto;
+    }
+
+    .hero .content .hero-header { 
+        text-align: center;
+    }
+
+    .hero .images {
+        min-width: 700px;
+        margin-top: 40px;
+        margin-left: -65px;
+    }
+
+    .hero .card:nth-child(1) {
+        left: 10%;
+        top: 0%;
+        transform: rotate(-21deg);
+        z-index: 6;
+        animation-delay: 0.6s;
+    }
+    
+    .hero .card:nth-child(2) {
+        transform: scale(0.65) rotate(-5deg);
+        left: 80%;
+        top: 0%;
+        animation-delay: 0.15s;
+    }
+    
+    .hero .card:nth-child(3) {
+        transform: scale(0.7) rotate(5deg);
+        left: -3%;
+        top: 20%;
+        animation-delay: 0s;
+    }
+    
+    .hero .card:nth-child(4) {
+        transform: scale(0.85) rotate(11deg);
+        left: -5%;
+        top: -30%;
+        animation-delay: 0.3s;
+    }
+    
+    .hero .card:nth-child(5) {
+        transform: scale(0.65) rotate(11deg);
+        left: 75%;
+        top: -60%;
+        z-index: 2;
+        animation-delay: .75s;
+    }
+    
+    .hero .card:nth-child(6) {
+        transform: scale(0.85) rotate(14deg);
+        left: 65%;
+        top: -25%;
+        z-index: 1;
+        animation-delay: .45s;
+    }
+
+    .hero {
+        margin-bottom: 160px;
+    }
+    
+    .step-container .steps {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 32px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .hero .images .image-container {
+        margin: auto;
+        max-width: 750px;
+        position: relative;
+        height: 100%;
+    }
+}
