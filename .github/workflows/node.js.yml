@@ -9,14 +9,14 @@ on:
   pull_request:
     branches: [ "master" ]
 
+defaults:
+  run:
+    working-directory: ./api
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: ./app
 
     strategy:
       matrix:
@@ -25,7 +25,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - working-directory: ./app
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
