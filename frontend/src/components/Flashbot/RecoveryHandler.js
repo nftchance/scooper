@@ -11,7 +11,7 @@ const RecoveryHandler = (props) => {
         compromisedWallet,
         compromisedWalletBalance,
         sponsorWalletPrivateKey,
-        sponsorWallet, 
+        sponsorWallet,
         sponsorWalletBalance,
         recipient,
         nftsRecovering
@@ -22,7 +22,7 @@ const RecoveryHandler = (props) => {
     const [live, setLive] = useState(false);
     const [transactions, setTransactions] = useState([]);
 
-    useEffect(() => { 
+    useEffect(() => {
         // Make sure that we clear the processing when nfts to save is updated.
         setLive(false);
 
@@ -36,7 +36,7 @@ const RecoveryHandler = (props) => {
             })
         )
     }, [
-        recipient, 
+        recipient,
         nftsRecovering
     ])
 
@@ -45,25 +45,25 @@ const RecoveryHandler = (props) => {
         var running = false;
 
         // If we have selected nfts and the needed wallets, run the clock
-        if(
+        if (
             compromisedWallet?.address &&
             sponsorWallet?.address &&
-            nftsRecovering.length > 0 && 
+            nftsRecovering.length > 0 &&
             recipient &&
             recoveryProcessorRef
-        ) { 
-            provider.once('block', async (blockNumber) => { 
-                if(running === false) {
+        ) {
+            provider.once('block', async (blockNumber) => {
+                if (running === false) {
                     running = true;
 
                     try {
                         const response = await recoveryProcessorRef.current.call(
                             blockNumber,
                             live,
-                            true 
+                            true
                         );
 
-                        if(response?.terminate === true) {
+                        if (response?.terminate === true) {
                             setLive(false);
                             provider.off('block');
                         }
@@ -79,8 +79,8 @@ const RecoveryHandler = (props) => {
 
         return () => { provider.off('block'); }
     }, [
-        provider, 
-        compromisedWallet, 
+        provider,
+        compromisedWallet,
         sponsorWallet,
         nftsRecovering,
         recipient,
@@ -89,15 +89,15 @@ const RecoveryHandler = (props) => {
 
     return (
         <>
-            <RecoveryProcessor 
+            <RecoveryProcessor
                 compromisedWalletPrivateKey={compromisedWalletPrivateKey}
                 compromisedWallet={compromisedWallet}
                 compromisedWalletBalance={compromisedWalletBalance}
                 sponsorWalletPrivateKey={sponsorWalletPrivateKey}
                 sponsorWallet={sponsorWallet}
                 sponsorWalletBalance={sponsorWalletBalance}
-                transactions={transactions} 
-                ref={recoveryProcessorRef} 
+                transactions={transactions}
+                ref={recoveryProcessorRef}
             />
 
             <Button

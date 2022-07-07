@@ -24,18 +24,18 @@ import PageNotFound from "./components/Pages/PageNotFound";
 // Create a client that has a connected provider, but no connected wallet
 const alchemyId = process.env.REACT_APP_ALCHEMY_ID
 const wagmiClient = createClient({
-	provider(config) { 
-		return new providers.AlchemyProvider(config.chainId, alchemyId)
-	}
+  provider(config) {
+    return new providers.AlchemyProvider(config.chainId, alchemyId)
+  }
 });
 
 const LoadableIndex = loadable(() => import("./components/Pages/Index"), {
   fallback: <Loading text="" />
 });
-const LoadableContact = loadable(() => import("./components/Contact/Contact"), { 
+const LoadableContact = loadable(() => import("./components/Contact/Contact"), {
   fallback: <Loading text="Loading..." />
 })
-const LoadableFAQ = loadable(() => import("./components/FAQ/FAQ"), { 
+const LoadableFAQ = loadable(() => import("./components/FAQ/FAQ"), {
   fallback: <Loading text="Loading..." />
 })
 const LoadableDashboard = loadable(() => import("./components/Dashboard/Dashboard"), {
@@ -44,8 +44,8 @@ const LoadableDashboard = loadable(() => import("./components/Dashboard/Dashboar
 
 function App() {
   return (
-    <MoralisProvider 
-      appId="97kvnuHnuAtwsPz1ne2ONP170i5mXpAXzGF1qhAv" 
+    <MoralisProvider
+      appId="97kvnuHnuAtwsPz1ne2ONP170i5mXpAXzGF1qhAv"
       serverUrl="https://2dn1ra9obzy2.usemoralis.com:2053/server"
     >
       <WagmiConfig client={wagmiClient}>
@@ -60,7 +60,7 @@ function App() {
             <meta property="og:description" content="Have you been hacked? Don't get stuck watching your tokens disappear! Simply connect your compromised wallet, connect a sponsor burner wallet to pay for gas and choose where the tokens you're saving should go." />
             <meta name="twitter:description" content="Have you been hacked? Don't get stuck watching your tokens disappear! Simply connect your compromised wallet, connect a sponsor burner wallet to pay for gas and choose where the tokens you're saving should go." />
           </Helmet>
-          
+
           <Navbar />
           <Routes>
             <Route exact path="/" element={<LoadableIndex />} />

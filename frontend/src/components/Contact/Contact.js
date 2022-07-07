@@ -6,7 +6,7 @@ import { Alert, Button, TextField } from '@mui/material';
 
 import { ethers } from "ethers";
 
-const Contact = () => { 
+const Contact = () => {
     const defaultValues = {
         name: "",
         response_method: "",
@@ -22,15 +22,15 @@ const Contact = () => {
     const [response, setResponse] = useState(null);
 
     // Psuedo-captcha system. Only way we are getting spam is if someone makes a bot specifically for this.
-    const defaultVerification = () => { 
+    const defaultVerification = () => {
         return [
-            Math.floor(Math.random() * 50), 
+            Math.floor(Math.random() * 50),
             Math.floor(Math.random() * 20)
         ]
     }
     const [random, setRandom] = useState(defaultVerification)
- 
-    const handleInputChange = (event) => { 
+
+    const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormValues({
             ...formValues,
@@ -38,31 +38,31 @@ const Contact = () => {
         })
     }
 
-    const compromisedErrors = () => { 
-        if(formValues.compromisedWallet === "") return null;
+    const compromisedErrors = () => {
+        if (formValues.compromisedWallet === "") return null;
 
         try {
             ethers.utils.getAddress(formValues.compromisedWallet)
-        } catch(e) {
+        } catch (e) {
             return "Invalid address provided for compromised wallet."
         }
 
         return null;
-    } 
+    }
 
-    const verificationErrors = () => { 
-        if(formValues.verification === "") return null;
+    const verificationErrors = () => {
+        if (formValues.verification === "") return null;
 
-        if(parseInt(formValues.verification) === random[0] + random[1])
+        if (parseInt(formValues.verification) === random[0] + random[1])
             return null
-        
+
         return 'Invalid verification message provided.';
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(verificationErrors() !== null)
+        if (verificationErrors() !== null)
             return
 
         fetch('https://scooper-api.utc24.io/contact/', {
@@ -73,38 +73,38 @@ const Contact = () => {
                 'Content-Type': 'application/json'
             },
         })
-        .then(res => res.json())
-        .then(res => { 
-            setResponse({
-                severity: 'success',
-                message: 'Successfully sent contact message. A Scooper team member will be in touch shortly.'
+            .then(res => res.json())
+            .then(res => {
+                setResponse({
+                    severity: 'success',
+                    message: 'Successfully sent contact message. A Scooper team member will be in touch shortly.'
+                })
+                setFormValues(defaultValues);
+                setRandom([
+                    Math.floor(Math.random() * 50),
+                    Math.floor(Math.random() * 20)
+                ]);
             })
-            setFormValues(defaultValues);
-            setRandom([
-                Math.floor(Math.random() * 50), 
-                Math.floor(Math.random() * 20)
-            ]);
-        })
-        .catch(e => { 
-            setResponse({
-                severity: 'error',
-                message: 'Ran into an error while sending the contact message. Try again later.'
+            .catch(e => {
+                setResponse({
+                    severity: 'error',
+                    message: 'Ran into an error while sending the contact message. Try again later.'
+                })
+                setFormValues(defaultValues);
+                setRandom([
+                    Math.floor(Math.random() * 50),
+                    Math.floor(Math.random() * 20)
+                ]);
             })
-            setFormValues(defaultValues);
-            setRandom([
-                Math.floor(Math.random() * 50), 
-                Math.floor(Math.random() * 20)
-            ]);
-        })
     }
-    
+
     return (
         <>
             <Helmet>
                 <title>CONTACT | SCOOPER</title>
                 <meta property="og:title" content="CONTACT | SCOOPER" />
                 <meta name="twitter:title" content="CONTACT | SCOOPER" />
-                
+
                 <meta name="description" content="Need a custom solution to save your Ethereum and tokens from your compromised wallet? Get in touch with the SCOOPER team and save your tokens now!" />
                 <meta property="og:description" content="Need a custom solution to save your Ethereum and tokens from your compromised wallet? Get in touch with the SCOOPER team and save your tokens now!" />
                 <meta name="twitter:description" content="Need a custom solution to save your Ethereum and tokens from your compromised wallet? Get in touch with the SCOOPER team and save your tokens now!" />
@@ -121,7 +121,7 @@ const Contact = () => {
                 </Alert>}
 
                 <form onSubmit={handleSubmit}>
-                    <TextField 
+                    <TextField
                         id="name"
                         type="text"
                         name="name"
@@ -132,7 +132,7 @@ const Contact = () => {
                         required
                     />
 
-                    <TextField 
+                    <TextField
                         id="response_method"
                         type="text"
                         name="response_method"
@@ -143,7 +143,7 @@ const Contact = () => {
                         required
                     />
 
-                    <TextField 
+                    <TextField
                         id="subject"
                         type="text"
                         name="subject"
@@ -154,7 +154,7 @@ const Contact = () => {
                         required
                     />
 
-                    <TextField 
+                    <TextField
                         id="budget"
                         type="text"
                         name="budget"
@@ -165,7 +165,7 @@ const Contact = () => {
                         required
                     />
 
-                    <TextField 
+                    <TextField
                         id="message"
                         type="text"
                         name="message"
@@ -178,7 +178,7 @@ const Contact = () => {
                         required
                     />
 
-                    <TextField 
+                    <TextField
                         id="compromisedWallet"
                         type="text"
                         name="compromisedWallet"
@@ -191,7 +191,7 @@ const Contact = () => {
                         helperText={compromisedErrors()}
                     />
 
-                    <TextField 
+                    <TextField
                         id="secretWord"
                         type="text"
                         name="secretWord"
@@ -202,8 +202,8 @@ const Contact = () => {
                         helperText={"Use this to know you're really talking to the Scooper team."}
                         required
                     />
-                    
-                    <TextField 
+
+                    <TextField
                         id="verification"
                         type="number"
                         name="verification"

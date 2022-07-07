@@ -1,6 +1,6 @@
 .footer {
     display: grid;
-    grid-template-columns: 150px auto auto 4fr;
+    grid-template-columns: 150px 150px 85px auto 200px;
     margin-bottom: 40px;
     margin-top: 40px;
 }
@@ -21,7 +21,8 @@
     margin-right: 15px;
 }
 
-.footer a:last-of-type {
+
+.footer a:nth-child(5) {
     text-align: right;
     margin-right: 15px;
 }

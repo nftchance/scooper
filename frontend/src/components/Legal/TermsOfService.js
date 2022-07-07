@@ -1,13 +1,13 @@
 import { Helmet } from "react-helmet";
 
-const TermsOfService = () => { 
+const TermsOfService = () => {
     return (
         <>
             <Helmet>
                 <title>TERMS OF SERVICE | SCOOPER</title>
                 <meta property="og:title" content="TERMS OF SERVICE | SCOOPER" />
                 <meta name="twitter:title" content="TERMS OF SERVICE | SCOOPER" />
-                
+
                 <meta name="description" content="The SCOOPER page you were looking for could not be found." />
                 <meta property="og:description" content="The SCOOPER page you were looking for could not be found." />
                 <meta name="twitter:description" content="The SCOOPER page you were looking for could not be found." />
@@ -17,7 +17,7 @@ const TermsOfService = () => {
                 <h1>Terms of Service</h1>
                 <h3>Last Updated: 06/22/2022</h3>
 
-                <p>Please read this carefully before using our website, services, and products. This is a contract between you and Scooper.</p> 
+                <p>Please read this carefully before using our website, services, and products. This is a contract between you and Scooper.</p>
 
                 <p>These Terms of Service (“Terms”) constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and Scooper ("Company", “we”, “us”, or “our”, and together with “you”, the “Parties” and each individually, a “Party”), concerning your access to and use of the Scooper website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”).</p>
 
@@ -25,7 +25,7 @@ const TermsOfService = () => {
 
                 <p>You are not permitted to access the Site if you are a citizen or resident of, or physically located in, any of the following jurisdictions: Burma, Cote D'Ivoire (Ivory Coast), Cuba, Democratic Republic of Congo, Iran, Iraq, Libya, Mali, Nicaragua, Democratic People’s Republic of Korea (North Korea), Somalia, Sudan, Syria, Yemen, Zimbabwe, or any other state, country or region that is subject to sanctions enforced by the US Office of Foreign Asset Compliance.</p>
 
-                <p>You must not use any software or networking techniques, including use of a Virtual Private Network (VPN) to modify your internet protocol address or otherwise circumvent or attempt to circumvent this prohibition.</p>            
+                <p>You must not use any software or networking techniques, including use of a Virtual Private Network (VPN) to modify your internet protocol address or otherwise circumvent or attempt to circumvent this prohibition.</p>
 
                 <p>You agree that by accessing the Site, you have read, understood, and agreed to be bound by all of these Terms. If you do not agree with all of these Terms, then you are expressly prohibited from using the Site and you must discontinue use immediately.</p>
 

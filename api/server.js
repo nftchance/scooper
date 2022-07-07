@@ -9,8 +9,8 @@ const { Client, Intents, MessageEmbed } = require('discord.js')
 
 const { RecoveryProcessor } = require('./services/RecoveryProcessor');
 
-const client = new Client({ 
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] 
+const client = new Client({
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
 });
 
 // load the environment variables
@@ -26,31 +26,31 @@ app.use(cors());
 app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
 
-if(development)
+if (development)
     app.use(morgan("dev"));
 
 // Connect to discord
 client.login(process.env.DISCORD_AUTH_TOKEN);
 
 // Status indicator that can be used to check the activity of the API
-app.get('/', (req, res) => { 
-    res.writeHead(200, {'Content-Type': 'text/html'});
+app.get('/', (req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
     res.write('<p><strong>API STATUS:</strong> RUNNING</p>');
     res.end();
 })
 
 // Process a transaction bundle request based on the data provided.
-app.post('/transaction', async function(req, res) { 
+app.post('/transaction', async function (req, res) {
     console.log('Body request:', req.body)
-    
+
     processor = new RecoveryProcessor(
         req.body.blockNumber,
-        req.body.live, 
+        req.body.live,
         req.body.compromisedWalletPrivateKey,
         req.body.compromisedWalletBalance,
         req.body.sponsorWalletPrivateKey,
         req.body.sponsorWalletBalance,
-        req.body.transactions, 
+        req.body.transactions,
         req.body.bundleGasEstimate
     );
 
@@ -63,11 +63,11 @@ app.post('/transaction', async function(req, res) {
 });
 
 // Send contact into Scooper channel in UTC discord server.
-app.post('/contact', async function(req, res) { 
+app.post('/contact', async function (req, res) {
     const embed = new MessageEmbed()
-    .setTitle(`CONTACT: ${req.body.subject}`)
-    .setDescription(req.body.message)
-    .setColor('#707070')
+        .setTitle(`CONTACT: ${req.body.subject}`)
+        .setDescription(req.body.message)
+        .setColor('#707070')
 
     embed.addField('From', req.body.name)
     embed.addField('Payment Budget', req.body.budget)
@@ -75,12 +75,12 @@ app.post('/contact', async function(req, res) {
     embed.addField('Response Method', req.body.response_method)
 
     client.channels.cache
-    .get(process.env.DISCORD_CONTACT_CHANNEL_ID)
-    .send({embeds: [embed]})
-    .then(() => { 
-        res.send({success: true})
-        res.end()
-    })
+        .get(process.env.DISCORD_CONTACT_CHANNEL_ID)
+        .send({ embeds: [embed] })
+        .then(() => {
+            res.send({ success: true })
+            res.end()
+        })
 })
 
 // Handle errors

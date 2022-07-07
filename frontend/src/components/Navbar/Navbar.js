@@ -5,8 +5,8 @@ import logoImg from "../../images/logo.svg";
 
 import "./Navbar.css";
 
-const Navbar = () => { 
-    return ( 
+const Navbar = () => {
+    return (
         <div className="container navbar">
             <Link to="/" className="brand"><strong>
                 <img src={logoImg} alt="logo" />

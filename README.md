@@ -1,5 +1,7 @@
 # Scooper: A NFT Recovery Tool For The Public
 
+![](./frontend/public/opengraph.png)
+
 * Scooper: A NFT Recovery Tool For The Public
     * How Digital Assets (NFTs And Ethereum) Are Lost
     * The Unfortunate Damage of Sweepers
@@ -101,6 +103,8 @@ Unfortunately, token theft gets much harder to stop as we begin building a websi
 So if you even have 30 NFTs in your wallet that is immediately 60 transactions that you to send. The amount of time needed adds up incredibly quickly. While this is a feasible and very good solution for a developer that can handle things themselves. For the general user this is incredibly infeasible.
 
 ## Solving The Problem 
+
+![Trolley Problem with Scoopers Existence](./trolley.png)
 
 Because of this, Scooper is designed around sharing the private key to the compromised wallet and the sponsor wallet. While this model may be an 'anti-pattern' to some, this method allows one to save the most of their assets in the least amount of time. 
 

@@ -50,7 +50,7 @@ const Index = () => {
                     <div className="hero-header">
                         <h1>SAVE YOUR NFTS AND ETH FROM A HACKED WALLET IN SECONDS.</h1>
                         <p>Have you been hacked? Don't get stuck watching your tokens disappear! Simply connect your compromised wallet, connect a sponsor burner wallet to pay for gas and choose where the tokens you're saving should go.</p>
-                        
+
                         <Link to="/dashboard" className="button secondary">
                             RECOVER NOW
                         </Link>
@@ -63,9 +63,9 @@ const Index = () => {
                                 <div key={idx} className="card">
                                     <a href={card.link} target="_blank" rel="noreferrer">
                                         <p className="status">SAVED</p>
-                                        <img 
+                                        <img
                                             loading="lazy"
-                                            src={card.image} 
+                                            src={card.image}
                                             style={{
                                                 height: "100%",
                                                 width: "100%",
@@ -73,7 +73,7 @@ const Index = () => {
                                             alt=" "
                                         />
                                         <div className="line"></div>
-                                        <p>{ card.name } {card?.tokenId && <span>#{ card.tokenId }</span>}</p>
+                                        <p>{card.name} {card?.tokenId && <span>#{card.tokenId}</span>}</p>
                                     </a>
                                 </div>
                             )
@@ -92,14 +92,14 @@ const Index = () => {
                     <div className="card">
                         <div className="card-body">
                             <p className="status">1. WALLETS</p>
-                            <p>To use Scooper, you need to provide three pieces of information: the seed phrase of your compromised wallet, the seed phrase of a sponsor wallet that will be used to pay gas fees to transfer your tokens and the destination address of a new, safe wallet for your tokens. </p> 
+                            <p>To use Scooper, you need to provide three pieces of information: the seed phrase of your compromised wallet, the seed phrase of a sponsor wallet that will be used to pay gas fees to transfer your tokens and the destination address of a new, safe wallet for your tokens. </p>
                         </div>
                     </div>
                     <div className="card">
                         <div className="card-body">
                             <p className="status">2. TOKENS</p>
-                            <p>With your wallets connected and the recipient set, you are ready to transfer the ETH and NFTs in your compromised wallet. Automatically retrieved, all you have to do is select all the tokens that you would like to save and the system will get everything ready to recover.</p> 
-                        </div> 
+                            <p>With your wallets connected and the recipient set, you are ready to transfer the ETH and NFTs in your compromised wallet. Automatically retrieved, all you have to do is select all the tokens that you would like to save and the system will get everything ready to recover.</p>
+                        </div>
                     </div>
                     <div className="card">
                         <div className="card-body">

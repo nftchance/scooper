@@ -5,8 +5,8 @@ import RecoverySuccessModal from './RecoverySuccessModal';
 import "./RecoveryProcessor.css";
 import { Typography } from '@mui/material';
 
-const RecoveryProcessor = forwardRef((props, ref)  => {
-    const { 
+const RecoveryProcessor = forwardRef((props, ref) => {
+    const {
         compromisedWalletPrivateKey,
         compromisedWallet,
         compromisedWalletBalance,
@@ -19,23 +19,23 @@ const RecoveryProcessor = forwardRef((props, ref)  => {
     const [bundleGasEstimate, setBundleGasEstimate] = useState(0);
     const [logs, setLogs] = useState([{
         blockNumber: 0,
-        status: "pending", 
-        simulatedGasPrice: { 
-            success: true, 
-            message: "Loading...", 
-            gasUsed: 0 
+        status: "pending",
+        simulatedGasPrice: {
+            success: true,
+            message: "Loading...",
+            gasUsed: 0
         }
     }])
 
     const [transactionBundle, setTransactionBundle] = useState([])
     const [success, setSuccess] = useState(false);
 
-    const handleLog = (log, res) => { 
-        if(log === true) {
+    const handleLog = (log, res) => {
+        if (log === true) {
             setLogs([
-                res, 
+                res,
                 ...logs.filter(logObj => logObj.blockNumber !== res.blockNumber)
-            ]);            
+            ]);
         }
     }
 
@@ -44,12 +44,12 @@ const RecoveryProcessor = forwardRef((props, ref)  => {
     }
 
     const call = async (blockNumber, live, log) => {
-        if(success) return {
+        if (success) return {
             blockNumber: blockNumber,
-            status: "pending", 
-            simulatedGasPrice: { 
+            status: "pending",
+            simulatedGasPrice: {
                 success: true,
-                gasUsed: 0, 
+                gasUsed: 0,
                 message: 'Done processing this bundle.'
             }
         }
@@ -69,7 +69,7 @@ const RecoveryProcessor = forwardRef((props, ref)  => {
 
         console.log('Sending bundle for processing:', data)
 
-        return fetch('https://scooper-api.utc24.io/transaction/', { 
+        return fetch('https://scooper-api.utc24.io/transaction/', {
             method: "POST",
             mode: "cors",
             headers: {
@@ -77,33 +77,33 @@ const RecoveryProcessor = forwardRef((props, ref)  => {
             },
             body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(res => {
-            console.log('Bundle response:', res);
-            setTransactionBundle(res.transactionBundle);
-            // Set the amount of gas that is needed for this bundle
-            setBundleGasEstimate(res.simulatedGasPrice.gasUsed);
+            .then(res => res.json())
+            .then(res => {
+                console.log('Bundle response:', res);
+                setTransactionBundle(res.transactionBundle);
+                // Set the amount of gas that is needed for this bundle
+                setBundleGasEstimate(res.simulatedGasPrice.gasUsed);
 
-            // Add the confirmation to the console
-            handleLog(log, res);
-            if(res.status === "success") {
-                setSuccess(true);
-            }
+                // Add the confirmation to the console
+                handleLog(log, res);
+                if (res.status === "success") {
+                    setSuccess(true);
+                }
 
-            return res;
-        })
-        .catch(e => {
-            const res = {
-                success: false,
-                status: 'error',
-                message: "Could not connect to server. Our system is down please try again later. This will not resolve itself."
-            }
-            
-            // Add the error to the console
-            handleLog(log, res);
+                return res;
+            })
+            .catch(e => {
+                const res = {
+                    success: false,
+                    status: 'error',
+                    message: "Could not connect to server. Our system is down please try again later. This will not resolve itself."
+                }
 
-            return res;
-        })
+                // Add the error to the console
+                handleLog(log, res);
+
+                return res;
+            })
     }
 
     // Enable the recovery handler to the call the function
@@ -115,16 +115,16 @@ const RecoveryProcessor = forwardRef((props, ref)  => {
 
     // Clear the gas estimate any time the transactions change
     // and re-enable the ability for the clock to run the processing
-    useEffect(() => { 
+    useEffect(() => {
         setBundleGasEstimate(0);
         setSuccess(false);
     }, [transactions])
 
     return (
         <>
-            <RecoverySuccessModal 
-                open={success} 
-                transactions={transactions} 
+            <RecoverySuccessModal
+                open={success}
+                transactions={transactions}
                 transactionBundle={transactionBundle}
             />
 
@@ -143,24 +143,24 @@ const RecoveryProcessor = forwardRef((props, ref)  => {
                 overflowY: "scroll",
                 padding: 15
             }}>
-                {logs.map((log) => ( 
-                    <p 
+                {logs.map((log) => (
+                    <p
                         key={`log:${log.blockNumber}`}
                         className={`log-message log-${log.status}`}
                     >
-                        <a 
-                            target="_blank" 
+                        <a
+                            target="_blank"
                             href={`https://etherscan.io/block/${log.blockNumber}`}
                             rel="noreferrer"
                         >
-                            [▣ { log.blockNumber }]
-                        </a> 
-                        {log.simulatedGasPrice?.gasUsed !== 0 && 
+                            [▣ {log.blockNumber}]
+                        </a>
+                        {log.simulatedGasPrice?.gasUsed !== 0 &&
                             <>
-                                [{ log.simulatedGasPrice.gasUsed } gas] 
+                                [{log.simulatedGasPrice.gasUsed} gas]
                             </>
                         }
-                        { log.simulatedGasPrice.message }
+                        {log.simulatedGasPrice.message}
                     </p>
                 ))}
             </div>

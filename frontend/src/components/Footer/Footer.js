@@ -5,7 +5,7 @@ import logoImg from "../../images/logo.svg";
 
 import "./Footer.css";
 
-const Footer = () => { 
+const Footer = () => {
     return (
         <div className="container footer">
             <Link to="/" className="brand"><strong>
@@ -14,8 +14,16 @@ const Footer = () => {
             </strong></Link>
             <Link to="/terms-of-service">Terms of Service</Link>
             <Link to="/contact">Contact</Link>
-            <a 
-                href="https://twitter.com/nftchance" 
+
+            <a
+                href="https://github.com/nftchance/scooper"
+                target="_blank"
+                rel="nonreferrer"
+            >
+                Open-Source Code
+            </a>
+            <a
+                href="https://twitter.com/nftchance"
                 target="_blank"
                 rel="noreferrer"
             >A solution by <strong>CHANCE</strong></a>
