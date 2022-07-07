@@ -14,6 +14,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./app
+
     strategy:
       matrix:
         node-version: [16.x]
@@ -21,7 +25,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: cd api
+    - working-directory: ./app
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
