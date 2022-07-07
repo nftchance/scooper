@@ -4,7 +4,7 @@
 
 ## How Digital Assets (NFTs and Ethereum) Are Lost
 
-In the land of digital assets it has become increasingly more common for someone to have their Ethereum wallet compromised while being left with very few options for recovery. Ethereum wallets operate very similar to real-world vaults. Without the secret code it will take an army to gain acess however with the proper string of characters that vault will swing wide-open at a moments notice.
+In the land of digital assets it has become increasingly more common for someone to have their Ethereum wallet compromised while being left with very few options for recovery. Ethereum wallets operate very similar to real-world vaults. Without the secret code it will take an army to gain access however with the proper string of characters that vault will swing wide-open at a moments notice.
 
 This is how individuals land themselves in the scenario of watching all their assets disappear in front of their eyes.
 
