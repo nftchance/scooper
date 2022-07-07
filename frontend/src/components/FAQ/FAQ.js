@@ -51,10 +51,10 @@ const FAQ = () => {
             answer: <Typography>Get in touch by utilizing the <Link to="/contact">Contact</Link> page and a Scooper team member will be in touch.</Typography>
         }, {
             question: "What can I do if I have an idea?",
-            answer: <Typography>Get in touch by utilizing the <Link to="/contact">Contact</Link> page and a Scooper team member will be in touch.</Typography>
+            answer: <Typography>Get in touch by utilizing the <Link to="/contact">Contact</Link> page and a Scooper team member will be in touch. Or, if you're a developer you can hop right into the code and build the functionality you want to see!</Typography>
         }, {
             question: "Does this do the same thing as 'x'?",
-            answer: <Typography>Don't know, don't care. It lets you save the tokens in your compromised wallet.</Typography>
+            answer: <Typography>Don't know, don't care. It lets you save the tokens in your compromised wallet. Things can be improved over time. If you're passionate about this, I would love to see your code added to the project!</Typography>
         }, {
             question: "Wouldn't Scooper be better 'x' way?",
             answer: <Typography>Maybe! Feel free to submit a Pull Request with the idea or even build and launch another tool! Would love to see how you solve this problem for the largest number of people.</Typography>
