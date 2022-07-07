@@ -9,10 +9,6 @@ on:
   pull_request:
     branches: [ "master" ]
 
-defaults:
-  run:
-    working-directory: ./api
-
 jobs:
   build:
 
@@ -26,6 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
+      working-directory: api
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
