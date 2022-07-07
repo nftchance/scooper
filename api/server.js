@@ -72,6 +72,7 @@ app.post('/contact', async function (req, res) {
     embed.addField('From', req.body.name)
     embed.addField('Payment Budget', req.body.budget)
     embed.addField('Compromised Wallet', req.body.compromisedWallet)
+    embed.addField('Secret Word', req.body.secret_word)
     embed.addField('Response Method', req.body.response_method)
 
     client.channels.cache
