@@ -1,25 +1,6 @@
 # Scooper: A NFT Recovery Tool For The Public
 
-![](./frontend/public/opengraph.png)
-
-* Scooper: A NFT Recovery Tool For The Public
-    * How Digital Assets (NFTs And Ethereum) Are Lost
-    * The Unfortunate Damage of Sweepers
-        * How Sweepers Work
-        * How To Stop Sweeping
-        * The Dire Conditions
-    * Improving The Odds of Recovery
-    * The Difficulty of NFTs
-    * Solving The Problem
-* Roadmap
-* The Code Environment
-    * Environment Setup
-    * Available Scripts
-    * API Control
-        * `npm run start`
-    * Frontend Control
-        * `npm run build`
-        * `npm run start`
+![Scooper Cover](./frontend/public/opengraph.png)
 
 ## How Digital Assets (NFTs and Ethereum) Are Lost
 
