@@ -90,7 +90,7 @@ const RecoverySuccessModal = (props) => {
                     {transactions.map((transaction, idx) => {
                         return <span key={`transaction:${idx}`} className="transaction">
                             <img
-                                alt={`transaction ${idx} image`}
+                                alt={`token ${idx}`}
                                 src={transaction.image}
                                 style={{
                                     border: "none",

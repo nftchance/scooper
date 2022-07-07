@@ -18,7 +18,7 @@ const Footer = () => {
             <a
                 href="https://github.com/nftchance/scooper"
                 target="_blank"
-                rel="nonreferrer"
+                rel="noreferrer"
             >
                 Open-Source Code
             </a>
