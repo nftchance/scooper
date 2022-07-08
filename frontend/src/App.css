@@ -92,6 +92,7 @@ blockquote {
 
 .container {
   margin-inline: 30px;
+  max-width: 1080px;
 }
 
 .card { 
