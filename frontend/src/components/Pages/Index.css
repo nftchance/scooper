@@ -154,7 +154,7 @@
 
     .hero .images {
         min-width: 700px;
-        margin-top: 40px;
+        margin-top: 80px;
         margin-left: -65px;
     }
 
@@ -206,7 +206,11 @@
     .hero {
         margin-bottom: 160px;
     }
-    
+
+    .step-container {
+        margin-top: 280px;
+    }
+
     .step-container .steps {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
